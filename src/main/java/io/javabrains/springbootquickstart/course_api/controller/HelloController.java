@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
 
-    @Autowired // This annotation helps us to create an object for the CompanyService class,
-    // thus we can access the methods without the need for creating an object. It id also referred as dependency injection
-    CompanyService companyService;
+//    @Autowired // This annotation helps us to create an object for the CompanyService class,
+//    // thus we can access the methods without the need for creating an object. It id also referred as dependency injection
+//    CompanyService companyService;
 
 
     @GetMapping("/hi") //GetMapping spring annotation helps us to get request
@@ -23,12 +23,12 @@ public class HelloController {
         return "<h1>HELLO SPRINGBOOT<h1>";
     }
 
-    @PostMapping("/company")
-    public String createCompanyData(@RequestBody Company company ){ //reads the data using the RequestBody annotation
-        //return companyService.save(company);
-        companyService.createCompany(company);
-        return "Created Company Data";
-    }
+//    @PostMapping("/company")
+//    public String createCompanyData(@RequestBody Company company ){ //reads the data using the RequestBody annotation
+//        //return companyService.save(company);
+//        companyService.createCompany(company);
+//        return "Created Company Data";
+//    }
 
 
 }

@@ -1,8 +1,10 @@
 package io.javabrains.springbootquickstart.course_api.entity;
 
 import jakarta.persistence.*;
+//import lombok.Data;
 
 @Entity
+//@Data // This annotation will help with getter and setters without the need to create them
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE) //Handles the primary key constrains
