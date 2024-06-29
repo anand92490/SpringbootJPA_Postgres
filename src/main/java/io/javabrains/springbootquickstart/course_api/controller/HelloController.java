@@ -1,5 +1,6 @@
 package io.javabrains.springbootquickstart.course_api.controller;
 
+import io.javabrains.springbootquickstart.course_api.companyRepository.CompanyRepository;
 import io.javabrains.springbootquickstart.course_api.entity.Company;
 import io.javabrains.springbootquickstart.course_api.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ public class HelloController {
 
     @Autowired // This annotation helps us to create an object for the CompanyService class,
     // thus we can access the methods without the need for creating an object. It id also referred as dependency injection
-    public  CompanyService companyService;
+    CompanyService companyService;
 
 
     @GetMapping("/hi") //GetMapping spring annotation helps us to get request
@@ -24,8 +25,10 @@ public class HelloController {
 
     @PostMapping("/company")
     public String createCompanyData(@RequestBody Company company ){ //reads the data using the RequestBody annotation
-
+        //return companyService.save(company);
         companyService.createCompany(company);
         return "Created Company Data";
     }
+
+
 }

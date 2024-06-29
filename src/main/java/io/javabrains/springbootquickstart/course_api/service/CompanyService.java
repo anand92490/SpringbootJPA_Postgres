@@ -5,6 +5,8 @@ import io.javabrains.springbootquickstart.course_api.entity.Company;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service //this annotation makes it as a service class, it contains the business logic
 public class CompanyService {
 
@@ -12,8 +14,16 @@ public class CompanyService {
     CompanyRepository companyRepository; // dependency injection helps us create object in spring eg. CompanyRepository repo = new CompanyRepository();
 
     public String createCompany(Company company) {
-     companyRepository.save(company);
-        return null;
+//
+//        Long l = 1L;
+//        Optional<Company> c = companyRepository.findById(l);
+//        System.out.println(c.get().getCompanyAddress());
+//        System.out.println(c.get().getEmail());
+//        System.out.println(c.get().getName());
+//
+
+        companyRepository.save(company);
+        return "saved successfully";
     }
 
 }
