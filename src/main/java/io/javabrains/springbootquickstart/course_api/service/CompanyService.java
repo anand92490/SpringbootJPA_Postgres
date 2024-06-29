@@ -4,7 +4,9 @@ import io.javabrains.springbootquickstart.course_api.companyRepository.CompanyRe
 import io.javabrains.springbootquickstart.course_api.entity.Company;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
@@ -47,5 +49,12 @@ public class CompanyService {
       return "created multiple data successfully";
     }
 
-
+    public Company updateCompany(Long id, Company company) {
+      Company existingRecord = companyRepository.findById(id).get();
+      existingRecord.setCompanyAddress(company.getCompanyAddress());
+      existingRecord.setEmail(company.getEmail());
+      existingRecord.setName(company.getName());
+      companyRepository.save(existingRecord);
+      return existingRecord;
+    }
 }

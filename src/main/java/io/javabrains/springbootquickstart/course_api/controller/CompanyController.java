@@ -52,7 +52,11 @@ public class CompanyController {
         return service.getCompanies(id);
     }
 
-
+    @PutMapping("/updateCompany/{id}")
+    public Company updateCompany(@PathVariable Long id, @RequestBody Company company) {
+        return service.updateCompany(id, company);
+    }
+  
 }
 
 
