@@ -1,12 +1,5 @@
 package io.javabrains.springbootquickstart.course_api.controller;
-
-import io.javabrains.springbootquickstart.course_api.companyRepository.CompanyRepository;
-import io.javabrains.springbootquickstart.course_api.entity.Company;
-import io.javabrains.springbootquickstart.course_api.service.CompanyService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController // This annotation makes this class as controller
