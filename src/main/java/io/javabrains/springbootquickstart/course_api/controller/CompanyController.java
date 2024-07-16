@@ -56,6 +56,11 @@ public class CompanyController {
     public Company updateCompany(@PathVariable Long id, @RequestBody Company company) {
         return service.updateCompany(id, company);
     }
+//    //TODO add delete endpoint
+//    @DeleteMapping("/deleteCompany/{id}")
+//    public Company deleteCompany(@PathVariable Long id, @RequestBody Company company){
+//        return service.deleteCompany(id, company);
+//    }
 
 }
 

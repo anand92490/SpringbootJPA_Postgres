@@ -57,4 +57,9 @@ public class CompanyService {
       companyRepository.save(existingRecord);
       return existingRecord;
     }
+
+    public String deleteCompany(Long id) {
+      companyRepository.deleteById(id);
+      return "deleted successfully";
+    }
 }
