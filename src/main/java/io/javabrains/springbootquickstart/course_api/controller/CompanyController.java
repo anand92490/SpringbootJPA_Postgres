@@ -56,7 +56,7 @@ public class CompanyController {
     public Company updateCompany(@PathVariable Long id, @RequestBody Company company) {
         return service.updateCompany(id, company);
     }
-  
+
 }
 
 
