@@ -56,11 +56,24 @@ public class CompanyController {
     public Company updateCompany(@PathVariable Long id, @RequestBody Company company) {
         return service.updateCompany(id, company);
     }
+
+    @PutMapping("/updateCompany")
+    public Company updateCompany(@RequestParam String name, @RequestBody Company company) {
+        return service.updateCompanyByName(name, company);
+    }
 //    //TODO add delete endpoint
 //    @DeleteMapping("/deleteCompany/{id}")
 //    public Company deleteCompany(@PathVariable Long id, @RequestBody Company company){
 //        return service.deleteCompany(id, company);
 //    }
+
+    @GetMapping("/getNames")
+    public List<Company> getCompaniesByNames(@RequestParam String name){
+        System.out.println("The name is " + name);
+        return service.getCompaniesByName(name);
+
+    }
+
 
 }
 

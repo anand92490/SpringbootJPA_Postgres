@@ -58,8 +58,24 @@ public class CompanyService {
       return existingRecord;
     }
 
+    public Company updateCompanyByName(String name, Company company) {
+        List<Company> existingRecord = companyRepository.findByName(name);
+
+        // use forLoop to iterate
+//        existingRecord.setCompanyAddress(company.getCompanyAddress());
+//        existingRecord.setEmail(company.getEmail());
+//        existingRecord.setName(company.getName());
+//        companyRepository.save(existingRecord);
+//        return existingRecord;
+        return null;
+    }
+
     public String deleteCompany(Long id) {
       companyRepository.deleteById(id);
       return "deleted successfully";
+    }
+
+    public List<Company> getCompaniesByName(String name) {
+      return companyRepository.findByName(name);
     }
 }
