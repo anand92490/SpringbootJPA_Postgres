@@ -33,8 +33,8 @@ public class CompanyService {
 //        System.out.println(c.get().getEmail());
 //        System.out.println(c.get().getName());
 
-        Address address = company.getAddress();
-        addressRepository.save(address);
+//        Address address = company.getAddress();
+//        addressRepository.save(address);
         companyRepository.save(company);
         return "saved successfully";
     }
@@ -80,9 +80,6 @@ public class CompanyService {
         return existingRecord;
 
     }
-
-
-
 
 
     public List<Company> getCompaniesByName(String name) {

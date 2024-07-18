@@ -1,9 +1,6 @@
 package io.javabrains.springbootquickstart.course_api.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Address {
@@ -12,6 +9,10 @@ public class Address {
     private Long id;
     private String city;
     private String state;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id", referencedColumnName = "id")
+    private Company company;
 
     public Long getId() {
         return id;
@@ -37,6 +38,11 @@ public class Address {
         this.state = state;
     }
 
+    public Company getCompany() {
+        return company;
+    }
 
-
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 }
