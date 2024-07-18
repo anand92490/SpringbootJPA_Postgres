@@ -5,14 +5,17 @@ import jakarta.persistence.*;
 
 @Entity
 //@Data // This annotation will help with getter and setters without the need to create them
-public class Company {
+public class  Company {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE) //Handles the primary key constrains
     private Long id;
     private String name;
     private String email;
-    @Column(name = "address") // all the entity column name must match as represented in the database or we could use this
-    private String companyAddress;
+   // @Column(name = "address") // all the entity column name must match as represented in the database or we could use this
+   // private String companyAddress;
+    @OneToOne
+    @JoinColumn(name = "address_id" ,referencedColumnName = "id") // joinColumn annotation helps us join company and address table to create one to one relationship
+    private Address address;
 
 
     //getter and setter
@@ -40,11 +43,20 @@ public class Company {
         this.email = email;
     }
 
-    public String getCompanyAddress() {
-        return companyAddress;
+//    public String getCompanyAddress() {
+//        return companyAddress;
+//    }
+//
+//    public void setCompanyAddress(String companyAddress) {
+//        this.companyAddress = companyAddress;
+//    }
+
+
+    public Address getAddress() {
+        return address;
     }
 
-    public void setCompanyAddress(String companyAddress) {
-        this.companyAddress = companyAddress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
